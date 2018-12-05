@@ -30,11 +30,11 @@ Leaf *Leaf::connect(Leaf *leaf)
     connections.push_back(con);
     leaf->connections.push_back(con);
 
-    Serial.print("connected\t");
+    /* Serial.print("connected\t");
     Serial.print(name);
     Serial.print("\tto\t");
     Serial.print(leaf->name);
-    Serial.println();
+    Serial.println(); */
     return this;
 }
 
@@ -45,9 +45,9 @@ vector<Leaf *> Leaf::next()
     {
         nexts.push_back(connections.at(i).getConnected(this));
     }
-    Serial.print("Deliver ");
+    /* Serial.print("Deliver ");
     Serial.print(nexts.size());
-    Serial.println(" next Leaves");
+    Serial.println(" next Leaves"); */
     return nexts;
 }
 
@@ -83,18 +83,18 @@ boolean LeafConnection::contains(Leaf *leaf)
 
 Leaf *LeafConnection::getConnected(Leaf *connected)
 {
-    Serial.print("getConnected ");
-    Serial.println(connected->name);
+ /*    Serial.print("getConnected ");
+    Serial.println(connected->name); */
     if (connected->name.equals(one->name))
     {
-        Serial.print("returning ");
-        Serial.println(other->name);
+    /*     Serial.print("returning ");
+        Serial.println(other->name); */
         return other;
     }
     else if (connected->name.equals(other->name))
     {
-        Serial.print("returning ");
-        Serial.println(one->name);
+   /*      Serial.print("returning ");
+        Serial.println(one->name); */
         return one;
     }
     else
