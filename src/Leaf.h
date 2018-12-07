@@ -1,7 +1,6 @@
 #include "FastLED.h"
 #include <ArduinoSTL.h>
 #include <vector>
-#include <list>
 
 using std::vector;
 
@@ -18,8 +17,7 @@ class Leaf
     CRGB *leds[3];
     String name;
 
-    void fadeTo(CRGB color);
-    void fadeToBlack();
+    Leaf(CRGB *led0, CRGB *led1, CRGB *led2, String name);
     void setColor(CRGB color);
     Leaf *connect(Leaf *leaf);
     vector<Leaf *> next();
